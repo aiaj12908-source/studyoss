@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -6,6 +7,7 @@
 <meta name="theme-color" content="#6366f1"/>
 
 <!-- PWA / iPhone -->
+
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="apple-mobile-web-app-title" content="StudyOS"/>
@@ -13,10 +15,12 @@
 <link rel="manifest" href="manifest.json"/>
 
 <!-- SEO -->
+
 <meta name="description" content="Daily study tracker for Punjab Police Constable exam – StudyOS"/>
 <title>StudyOS · Punjab Police</title>
 
 <!-- Favicon -->
+
 <link rel="icon" href="favicon.ico"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -198,27 +202,46 @@ body::after{content:'';position:fixed;bottom:-150px;left:-150px;width:400px;heig
 .msave{flex:2;padding:13px;border-radius:var(--r2);border:none;background:linear-gradient(135deg,var(--indigo),var(--teal));color:#fff;cursor:pointer;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.5px;box-shadow:0 4px 14px rgba(99,102,241,0.35);}
 .msave:active{transform:scale(0.97);}
 
-/* ── STATS ── */
-.stats-section{margin-bottom:22px;}
-.stats-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);padding:7px 0;margin-bottom:12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
-.stats-title span{font-size:14px;}
-.bar-chart{display:flex;flex-direction:column;gap:8px;}
-.bar-row{display:flex;align-items:center;gap:8px;}
-.bar-label{font-size:9px;color:var(--text2);width:90px;flex-shrink:0;font-family:'JetBrains Mono',monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.bar-track{flex:1;height:18px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;position:relative;}
-.bar-fill{height:100%;border-radius:4px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:6px;min-width:2px;}
-.bar-pct{font-size:8px;font-weight:700;color:#fff;font-family:'JetBrains Mono',monospace;}
-.bar-val{font-size:9px;color:var(--text3);width:28px;text-align:right;flex-shrink:0;font-family:'JetBrains Mono',monospace;}
-.week-bars{display:flex;align-items:flex-end;gap:6px;height:100px;margin-bottom:6px;}
-.wbar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
-.wbar-fill{width:100%;border-radius:4px 4px 0 0;transition:height 0.6s cubic-bezier(0.4,0,0.2,1);min-height:2px;}
-.wbar-lbl{font-size:8px;color:var(--text3);font-family:'JetBrains Mono',monospace;}
-.wbar-pct{font-size:7px;color:var(--text3);font-family:'JetBrains Mono',monospace;}
-.stats-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;}
-.sum-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:12px;text-align:center;}
-.sum-val{font-size:22px;font-weight:800;font-family:'JetBrains Mono',monospace;}
-.sum-lbl{font-size:8px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+/* ── SYLLABUS ── */
+.syl-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.syl-folder{border-radius:var(--r);border:1px solid var(--border);background:var(--surface);padding:14px 13px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+.syl-folder::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.syl-folder:active{transform:scale(0.97);}
+.syl-folder-top{display:flex;justify-content:space-between;align-items:flex-start;}
+.syl-folder-icon{font-size:24px;margin-bottom:6px;}
+.syl-folder-name{font-size:12px;font-weight:800;margin-bottom:4px;}
+.syl-folder-count{font-size:9px;color:var(--text3);font-family:'JetBrains Mono',monospace;}
+.syl-folder-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:2px;line-height:1;}
+.syl-prog-bar{height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;margin-top:8px;}
+.syl-prog-fill{height:100%;border-radius:2px;transition:width 0.4s;}
+.syl-add-btn{width:100%;padding:14px;border-radius:var(--r);border:1.5px dashed rgba(99,102,241,0.3);background:rgba(99,102,241,0.04);color:var(--indigo);cursor:pointer;font-size:12px;font-weight:700;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;}
+/* Subject detail view */
+.syl-back{display:flex;align-items:center;gap:8px;padding:0 0 14px;cursor:pointer;color:var(--text2);font-size:12px;font-weight:700;}
+.syl-back-icon{font-size:18px;}
+.syl-subject-hdr{display:flex;align-items:center;gap:10px;padding:13px;border-radius:var(--r);margin-bottom:12px;}
+.syl-subject-title{font-size:15px;font-weight:800;}
+.syl-subject-sub{font-size:9px;color:rgba(255,255,255,0.5);margin-top:2px;font-family:'JetBrains Mono',monospace;}
+.syl-chapter{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:var(--r2);border:1px solid var(--border);background:var(--surface);margin-bottom:7px;transition:all 0.2s;}
+.syl-chapter.done{background:rgba(52,211,153,0.05);border-color:rgba(52,211,153,0.2);}
+.syl-check{width:22px;height:22px;border-radius:6px;border:1.5px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;margin-top:1px;transition:all 0.2s;}
+.syl-check.checked{background:var(--emerald);border-color:var(--emerald);}
+.syl-chapter-body{flex:1;min-width:0;}
+.syl-chapter-name{font-size:11px;font-weight:700;color:var(--text);}
+.syl-chapter.done .syl-chapter-name{color:var(--emerald);text-decoration:line-through;text-decoration-color:rgba(52,211,153,0.4);}
+.syl-chapter-note{font-size:10px;color:var(--text3);margin-top:4px;font-style:italic;}
+.syl-note-inp{width:100%;margin-top:6px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:7px 9px;color:var(--text2);font-size:10px;font-family:'Syne',sans-serif;outline:none;display:none;}
+.syl-chapter-actions{display:flex;gap:6px;flex-shrink:0;}
+.syl-note-btn{background:none;border:1px solid var(--border);border-radius:5px;color:var(--text3);cursor:pointer;font-size:11px;padding:4px 7px;}
+.syl-del-btn{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:2px;line-height:1;}
+.syl-add-ch{display:flex;gap:6px;margin-top:10px;}
+.syl-add-ch input{flex:1;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.1);border-radius:var(--r2);padding:10px 12px;color:var(--text2);font-size:11px;font-family:'Syne',sans-serif;outline:none;}
+.syl-add-ch button{padding:10px 14px;border-radius:var(--r2);border:none;background:rgba(99,102,241,0.2);color:var(--indigo);cursor:pointer;font-size:11px;font-weight:700;font-family:'Syne',sans-serif;}
+/* Add subject modal */
+.syl-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);z-index:400;align-items:flex-end;justify-content:center;}
+.syl-modal.open{display:flex;}
+.syl-modal-box{width:100%;max-width:500px;background:var(--surface2);border-radius:22px 22px 0 0;border:1px solid var(--border2);padding:18px 18px calc(var(--safe-bot)+30px);max-height:80vh;overflow-y:auto;}
 
+/* ── INSTALL BANNER (Safari hint) ── */
 .install-hint{
   position:fixed;bottom:calc(var(--safe-bot) + 70px);left:16px;right:16px;
   background:linear-gradient(135deg,#1a1040,#0d1a2e);
@@ -233,10 +256,12 @@ body::after{content:'';position:fixed;bottom:-150px;left:-150px;width:400px;heig
 .install-hint-txt span{font-size:10px;color:var(--text3);}
 .install-close{background:none;border:none;color:var(--text3);cursor:pointer;font-size:20px;padding:4px;}
 </style>
+
 </head>
 <body>
 
 <!-- HEADER -->
+
 <div class="header">
   <div class="header-row1">
     <div class="brand">
@@ -270,22 +295,27 @@ body::after{content:'';position:fixed;bottom:-150px;left:-150px;width:400px;heig
 </div>
 
 <!-- TABS -->
+
 <div class="tabs">
   <button class="tab active" onclick="switchTab('today')">Today</button>
   <button class="tab" onclick="switchTab('week')">Week</button>
-  <button class="tab" onclick="switchTab('notes')">Notes</button>
+  <button class="tab" onclick="switchTab('syllabus')">Syllabus</button>
   <button class="tab" onclick="switchTab('stats')">Stats</button>
+  <button class="tab" onclick="switchTab('notes')">Notes</button>
 </div>
 
 <!-- CONTENT -->
+
 <div class="scroller">
   <div class="panel" id="tab-today"></div>
   <div class="panel" id="tab-week" style="display:none"></div>
-  <div class="panel" id="tab-notes" style="display:none"></div>
+  <div class="panel" id="tab-syllabus" style="display:none"></div>
   <div class="panel" id="tab-stats" style="display:none"></div>
+  <div class="panel" id="tab-notes" style="display:none"></div>
 </div>
 
 <!-- BOTTOM NAV -->
+
 <div class="bnav">
   <button class="bnav-btn active" onclick="switchTab('today')" id="bn-today">
     <span class="bnav-icon">📋</span><span class="bnav-lbl">Today</span>
@@ -293,15 +323,19 @@ body::after{content:'';position:fixed;bottom:-150px;left:-150px;width:400px;heig
   <button class="bnav-btn" onclick="switchTab('week')" id="bn-week">
     <span class="bnav-icon">📊</span><span class="bnav-lbl">Week</span>
   </button>
-  <button class="bnav-btn" onclick="switchTab('notes')" id="bn-notes">
-    <span class="bnav-icon">📝</span><span class="bnav-lbl">Notes</span>
+  <button class="bnav-btn" onclick="switchTab('syllabus')" id="bn-syllabus">
+    <span class="bnav-icon">📚</span><span class="bnav-lbl">Syllabus</span>
   </button>
   <button class="bnav-btn" onclick="switchTab('stats')" id="bn-stats">
     <span class="bnav-icon">📈</span><span class="bnav-lbl">Stats</span>
   </button>
+  <button class="bnav-btn" onclick="switchTab('notes')" id="bn-notes">
+    <span class="bnav-icon">📝</span><span class="bnav-lbl">Notes</span>
+  </button>
 </div>
 
 <!-- ADD SLOT MODAL -->
+
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal">
     <div class="modal-handle"></div>
@@ -329,6 +363,7 @@ body::after{content:'';position:fixed;bottom:-150px;left:-150px;width:400px;heig
 </div>
 
 <!-- iOS INSTALL HINT -->
+
 <div class="install-hint" id="installHint">
   <div style="font-size:22px">📲</div>
   <div class="install-hint-txt">
@@ -336,6 +371,29 @@ body::after{content:'';position:fixed;bottom:-150px;left:-150px;width:400px;heig
     <span>Tap Share → "Add to Home Screen"</span>
   </div>
   <button class="install-close" onclick="document.getElementById('installHint').style.display='none'">×</button>
+</div>
+
+<!-- SYLLABUS: ADD SUBJECT MODAL -->
+
+<div class="syl-modal" id="sylModal" onclick="if(event.target===this)closeSylModal()">
+  <div class="syl-modal-box">
+    <div class="modal-handle"></div>
+    <div class="modal-title">＋ Add Subject</div>
+    <span class="mlabel">Subject Name *</span>
+    <input class="minput" id="sylName" placeholder="e.g. English, History…"/>
+    <span class="mlabel">Icon (emoji)</span>
+    <div style="display:flex;gap:8px;align-items:center;margin-top:6px;">
+      <button onclick="toggleSylEmoji()" id="sylEmojiBtn" style="width:42px;height:42px;border-radius:var(--r2);border:1px solid var(--border2);background:var(--surface3);font-size:20px;cursor:pointer;">📖</button>
+      <span style="font-size:10px;color:var(--text3)">Tap to pick emoji</span>
+    </div>
+    <div class="emoji-grid" id="sylEmojiGrid" style="display:none;margin-top:8px;"></div>
+    <span class="mlabel">Color</span>
+    <div class="color-grid" id="sylColorGrid" style="margin-top:6px;"></div>
+    <div class="mactions">
+      <button class="mcancel" onclick="closeSylModal()">Cancel</button>
+      <button class="msave" onclick="saveNewSubject()">Add Subject →</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -354,15 +412,76 @@ const PALETTE=["#6366f1","#2dd4bf","#f43f5e","#fb923c","#e8b84b","#4ade80","#38b
 const EMOJIS=["📌","⭐","🔖","💡","🎯","📝","🏃","☕","🌙","🌅","🔔","💪","📖","🧠","✏️","⏰","🔥","🎓","🏆","🧪","📐","🗺️","🔑","💰"];
 const DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
 
+// ── SYLLABUS DEFAULT DATA ──────────────────────────────
+const SYLLABUS_DEFAULT=[
+  {id:"syl_pgk",name:"Punjab GK",icon:"🌾",color:"#f97316",chapters:[
+    {id:"pgk_g1",name:"Guru Nanak Dev Ji (1st Guru)"},{id:"pgk_g2",name:"Guru Angad Dev Ji (2nd)"},
+    {id:"pgk_g3",name:"Guru Amar Das Ji (3rd)"},{id:"pgk_g4",name:"Guru Ram Das Ji (4th)"},
+    {id:"pgk_g5",name:"Guru Arjan Dev Ji (5th)"},{id:"pgk_g6",name:"Guru Hargobind Ji (6th)"},
+    {id:"pgk_g7",name:"Guru Har Rai Ji (7th)"},{id:"pgk_g8",name:"Guru Har Krishan Ji (8th)"},
+    {id:"pgk_g9",name:"Guru Tegh Bahadur Ji (9th)"},{id:"pgk_g10",name:"Guru Gobind Singh Ji (10th)"},
+    {id:"pgk_banda",name:"Banda Singh Bahadur"},{id:"pgk_misls",name:"Sikh Misls Period"},
+    {id:"pgk_mhr",name:"Maharaja Ranjit Singh"},{id:"pgk_anglo1",name:"Anglo-Sikh War 1st (1845-46)"},
+    {id:"pgk_anglo2",name:"Anglo-Sikh War 2nd (1848-49)"},{id:"pgk_british",name:"Punjab Under British Rule"},
+    {id:"pgk_movement",name:"Freedom Movement in Punjab"},{id:"pgk_geo",name:"Geography of Punjab"},
+    {id:"pgk_partition",name:"Partition of Punjab 1947"},
+  ]},
+  {id:"syl_polity",name:"Polity",icon:"⚖️",color:"#6366f1",chapters:[
+    {id:"pol_ca",name:"Constituent Assembly"},{id:"pol_making",name:"Making of Constitution"},
+    {id:"pol_p1",name:"Part I – Union & Territory (Art 1-4)"},{id:"pol_p2",name:"Part II – Citizenship (Art 5-11)"},
+    {id:"pol_p3",name:"Part III – Fundamental Rights (Art 12-35)"},{id:"pol_p4",name:"Part IV – DPSP (Art 36-51)"},
+    {id:"pol_p4a",name:"Part IVA – Fundamental Duties (Art 51A)"},{id:"pol_p5",name:"Part V – Union Govt (Art 52-151)"},
+    {id:"pol_p6",name:"Part VI – State Govt (Art 152-237)"},{id:"pol_p8",name:"Part VIII – UTs (Art 239-242)"},
+    {id:"pol_p9",name:"Part IX – Panchayats (Art 243A-243O)"},{id:"pol_p9a",name:"Part IXA – Municipalities"},
+    {id:"pol_p10",name:"Part X – Scheduled Areas (Art 244)"},{id:"pol_p11",name:"Part XI – Union-State Relations"},
+    {id:"pol_p12",name:"Part XII – Finance (Art 264-300A)"},{id:"pol_p15",name:"Part XV – Elections (Art 324-329)"},
+    {id:"pol_p18",name:"Part XVIII – Emergency (Art 352-360)"},{id:"pol_p20",name:"Part XX – Amendment (Art 368)"},
+    {id:"pol_sch",name:"All 12 Schedules"},{id:"pol_amend",name:"Important Amendments"},
+    {id:"pol_acts",name:"Important Constitutional Acts"},
+  ]},
+  {id:"syl_math",name:"Math",icon:"🔢",color:"#fb923c",chapters:[
+    {id:"m_simplify",name:"Simplification"},{id:"m_decimal",name:"Decimal & Fraction"},
+    {id:"m_avg",name:"Average"},{id:"m_calc",name:"Basic Calculation Tricks"},
+    {id:"m_pct",name:"Percentage"},{id:"m_pl",name:"Profit & Loss"},
+    {id:"m_disc",name:"Discount"},{id:"m_ratio",name:"Ratio & Proportion"},
+    {id:"m_partner",name:"Partnership"},{id:"m_si",name:"Simple Interest"},
+    {id:"m_ci",name:"Compound Interest"},{id:"m_tw",name:"Time & Work"},
+    {id:"m_pipe",name:"Pipe & Cistern"},{id:"m_mixture",name:"Mixture & Alligation"},
+    {id:"m_speed",name:"Speed Time & Distance"},{id:"m_train",name:"Problems on Trains"},
+    {id:"m_boat",name:"Boat & Stream"},{id:"m_area",name:"Area & Perimeter"},
+    {id:"m_vol",name:"Volume & Surface Area"},{id:"m_num",name:"Number System"},
+    {id:"m_hcf",name:"HCF & LCM"},{id:"m_age",name:"Problems on Ages"},
+  ]},
+  {id:"syl_reasoning",name:"Reasoning",icon:"🧩",color:"#38bdf8",chapters:[
+    {id:"r_nonverbal",name:"Non Verbal Reasoning"},{id:"r_seating",name:"Seating Arrangement"},
+    {id:"r_puzzle",name:"Puzzle"},{id:"r_mixtest",name:"Mix Test Reasoning"},
+    {id:"r_blood",name:"Blood Relation"},{id:"r_dir",name:"Direction & Distance"},
+    {id:"r_syllogism",name:"Syllogism"},{id:"r_rank",name:"Ranking & Order"},
+    {id:"r_series",name:"Series"},{id:"r_analogy",name:"Analogy"},
+    {id:"r_coding",name:"Coding-Decoding"},{id:"r_alpha",name:"Alphanumeric Series"},
+    {id:"r_statement",name:"Statement & Conclusion"},{id:"r_inequality",name:"Inequality"},
+  ]},
+  {id:"syl_computer",name:"Computer",icon:"💻",color:"#4ade80",chapters:[]},
+  {id:"syl_punjabi",name:"Punjabi",icon:"✍️",color:"#f43f5e",chapters:[]},
+  {id:"syl_english",name:"English",icon:"🔤",color:"#2dd4bf",chapters:[]},
+];
+
 let logs={},notes={},custom=[],selColor=PALETTE[0],selEmoji="📌";
+let syllabus=[],sylDone={},sylNotes={},openSylId=null,selSylColor=PALETTE[0],selSylEmoji="📖";
 try{logs=JSON.parse(localStorage.getItem("sos_logs")||"{}");}catch{}
 try{notes=JSON.parse(localStorage.getItem("sos_notes")||"{}");}catch{}
 try{custom=JSON.parse(localStorage.getItem("sos_custom")||"[]");}catch{}
+try{syllabus=JSON.parse(localStorage.getItem("sos_syllabus")||"null")||JSON.parse(JSON.stringify(SYLLABUS_DEFAULT));}catch{syllabus=JSON.parse(JSON.stringify(SYLLABUS_DEFAULT));}
+try{sylDone=JSON.parse(localStorage.getItem("sos_syldone")||"{}");}catch{}
+try{sylNotes=JSON.parse(localStorage.getItem("sos_sylnotes")||"{}");}catch{}
 
 function save(){
   try{localStorage.setItem("sos_logs",JSON.stringify(logs));}catch{}
   try{localStorage.setItem("sos_notes",JSON.stringify(notes));}catch{}
   try{localStorage.setItem("sos_custom",JSON.stringify(custom));}catch{}
+  try{localStorage.setItem("sos_syllabus",JSON.stringify(syllabus));}catch{}
+  try{localStorage.setItem("sos_syldone",JSON.stringify(sylDone));}catch{}
+  try{localStorage.setItem("sos_sylnotes",JSON.stringify(sylNotes));}catch{}
 }
 
 function allBlocks(){return[...FIXED,...custom];}
@@ -574,76 +693,214 @@ function renderNotes(){
 function addNote(){const el=document.getElementById("noteInp");if(!el||!el.value.trim())return;const t=tk();if(!notes[t])notes[t]=[];notes[t].push(el.value.trim());save();renderNotes();}
 function delNote(i){const t=tk();notes[t].splice(i,1);save();renderNotes();}
 
-// ── STATS ─────────────────────────────────────────────
-function renderStats(){
-  const today=tk(), tl=logs[today]||{}, wds=wd();
-  const AS=allSubjects(), tot=AS.length;
+// ── SYLLABUS ──────────────────────────────────────────
+function renderSyllabus(){
+  const el=document.getElementById("tab-syllabus");
+  if(openSylId){
+    renderSubjectDetail(openSylId);return;
+  }
+  let h=`<button class="syl-add-btn" onclick="openSylModal()">＋ Add New Subject</button>
+  <div class="syl-grid">`;
+  syllabus.forEach(sub=>{
+    const total=sub.chapters.length;
+    const done=sub.chapters.filter(c=>sylDone[c.id]).length;
+    const pct=total?Math.round(done/total*100):0;
+    h+=`<div class="syl-folder" onclick="openSubject('${sub.id}')" style="border-top:3px solid ${sub.color}">
+      <div class="syl-folder-top">
+        <div>
+          <div class="syl-folder-icon">${sub.icon}</div>
+          <div class="syl-folder-name">${sub.name}</div>
+          <div class="syl-folder-count">${done}/${total} chapters · ${pct}%</div>
+        </div>
+        <button class="syl-folder-del" onclick="event.stopPropagation();delSubject('${sub.id}')">🗑</button>
+      </div>
+      <div class="syl-prog-bar"><div class="syl-prog-fill" style="width:${pct}%;background:${sub.color}"></div></div>
+    </div>`;
+  });
+  h+=`</div>`;
+  el.innerHTML=h;
+}
 
-  // Summary cards
-  const todayDone=AS.filter(s=>tl[s.id]).length;
-  const todayPct=tot?Math.round(todayDone/tot*100):0;
-  const weekDone=wds.reduce((a,d)=>a+Object.values(logs[d]||{}).filter(Boolean).length,0);
-  const weekMax=tot*7;
-  const weekPct=weekMax?Math.round(weekDone/weekMax*100):0;
-  const str=streak();
+function openSubject(id){openSylId=id;renderSubjectDetail(id);}
 
-  let h=`<div class="stats-summary">
-    <div class="sum-card"><div class="sum-val" style="color:var(--teal)">${todayPct}%</div><div class="sum-lbl">Today</div></div>
-    <div class="sum-card"><div class="sum-val" style="color:var(--indigo)">${weekPct}%</div><div class="sum-lbl">This Week</div></div>
-    <div class="sum-card"><div class="sum-val" style="color:var(--gold)">${str}🔥</div><div class="sum-lbl">Streak</div></div>
-    <div class="sum-card"><div class="sum-val" style="color:var(--emerald)">${todayDone}/${tot}</div><div class="sum-lbl">Done Today</div></div>
+function renderSubjectDetail(id){
+  const sub=syllabus.find(s=>s.id===id);if(!sub)return;
+  const done=sub.chapters.filter(c=>sylDone[c.id]).length;
+  const el=document.getElementById("tab-syllabus");
+  let h=`<div class="syl-back" onclick="openSylId=null;renderSyllabus()">
+    <span class="syl-back-icon">←</span> Back to Subjects
+  </div>
+  <div class="syl-subject-hdr" style="background:${sub.color}22;border:1px solid ${sub.color}44">
+    <span style="font-size:28px">${sub.icon}</span>
+    <div>
+      <div class="syl-subject-title">${sub.name}</div>
+      <div class="syl-subject-sub">${done}/${sub.chapters.length} completed</div>
+    </div>
   </div>`;
 
-  // Week bar graph
-  h+=`<div class="stats-section">
-    <div class="stats-title"><span>📅</span> WEEKLY PROGRESS</div>
-    <div class="week-bars">`;
+  sub.chapters.forEach(ch=>{
+    const isDone=!!sylDone[ch.id];
+    const note=sylNotes[ch.id]||"";
+    h+=`<div class="syl-chapter${isDone?" done":""}" id="ch_${ch.id}">
+      <div class="syl-check${isDone?" checked":""}" onclick="toggleChapter('${sub.id}','${ch.id}')">
+        ${isDone?'<span style="color:#000;font-weight:800;font-size:12px">✓</span>':""}
+      </div>
+      <div class="syl-chapter-body">
+        <div class="syl-chapter-name">${ch.name}</div>
+        ${note?`<div class="syl-chapter-note">📝 ${note}</div>`:""}
+        <input class="syl-note-inp" id="ni_${ch.id}" placeholder="Add note…" value="${note}"
+          onblur="saveChapterNote('${ch.id}',this.value)" onkeydown="if(event.key==='Enter')saveChapterNote('${ch.id}',this.value)"/>
+      </div>
+      <div class="syl-chapter-actions">
+        <button class="syl-note-btn" onclick="toggleNoteInp('${ch.id}')">📝</button>
+        <button class="syl-del-btn" onclick="delChapter('${sub.id}','${ch.id}')">×</button>
+      </div>
+    </div>`;
+  });
+
+  h+=`<div class="syl-add-ch">
+    <input id="newChInp_${id}" placeholder="＋ New chapter name…" onkeydown="if(event.key==='Enter')addChapter('${id}')"/>
+    <button onclick="addChapter('${id}')">Add</button>
+  </div>`;
+  el.innerHTML=h;
+}
+
+function toggleChapter(subId,chId){
+  sylDone[chId]=!sylDone[chId];save();renderSubjectDetail(subId);
+}
+function toggleNoteInp(chId){
+  const inp=document.getElementById("ni_"+chId);
+  if(inp){inp.style.display=inp.style.display==="none"?"block":"none";if(inp.style.display==="block")inp.focus();}
+}
+function saveChapterNote(chId,val){
+  sylNotes[chId]=val.trim();save();
+  if(openSylId)renderSubjectDetail(openSylId);
+}
+function addChapter(subId){
+  const inp=document.getElementById("newChInp_"+subId);if(!inp||!inp.value.trim())return;
+  const sub=syllabus.find(s=>s.id===subId);if(!sub)return;
+  sub.chapters.push({id:"ch_"+Date.now(),name:inp.value.trim()});
+  save();renderSubjectDetail(subId);
+}
+function delChapter(subId,chId){
+  const sub=syllabus.find(s=>s.id===subId);if(!sub)return;
+  if(!confirm("Delete this chapter?"))return;
+  sub.chapters=sub.chapters.filter(c=>c.id!==chId);
+  delete sylDone[chId];delete sylNotes[chId];
+  save();renderSubjectDetail(subId);
+}
+function delSubject(id){
+  if(!confirm("Delete this subject and all its chapters?"))return;
+  syllabus=syllabus.filter(s=>s.id!==id);
+  if(openSylId===id)openSylId=null;
+  save();renderSyllabus();
+}
+
+// ── SYLLABUS MODAL ────────────────────────────────────
+function openSylModal(){
+  selSylColor=PALETTE[syllabus.length%PALETTE.length];
+  selSylEmoji="📖";
+  document.getElementById("sylName").value="";
+  document.getElementById("sylEmojiBtn").textContent=selSylEmoji;
+  document.getElementById("sylEmojiGrid").style.display="none";
+  document.getElementById("sylColorGrid").innerHTML=PALETTE.map(c=>`<div class="cswatch${c===selSylColor?" sel":""}" style="background:${c}" onclick="pickSylColor('${c}')"></div>`).join("");
+  document.getElementById("sylEmojiGrid").innerHTML=EMOJIS.map(e=>`<div class="epick${e===selSylEmoji?" sel":""}" onclick="pickSylEmoji('${e}')">${e}</div>`).join("");
+  document.getElementById("sylModal").classList.add("open");
+}
+function closeSylModal(){document.getElementById("sylModal").classList.remove("open");}
+function pickSylColor(c){selSylColor=c;document.getElementById("sylColorGrid").innerHTML=PALETTE.map(x=>`<div class="cswatch${x===c?" sel":""}" style="background:${x}" onclick="pickSylColor('${x}')"></div>`).join("");}
+function pickSylEmoji(e){selSylEmoji=e;document.getElementById("sylEmojiBtn").textContent=e;document.getElementById("sylEmojiGrid").innerHTML=EMOJIS.map(x=>`<div class="epick${x===e?" sel":""}" onclick="pickSylEmoji('${x}')">${x}</div>`).join("");}
+function toggleSylEmoji(){const g=document.getElementById("sylEmojiGrid");g.style.display=g.style.display==="none"?"flex":"none";}
+function saveNewSubject(){
+  const name=document.getElementById("sylName").value.trim();if(!name){document.getElementById("sylName").focus();return;}
+  syllabus.push({id:"syl_"+Date.now(),name,icon:selSylEmoji,color:selSylColor,chapters:[]});
+  save();closeSylModal();renderSyllabus();
+}
+
+// ── STATS ─────────────────────────────────────────────
+function renderStats(){
+  const today=tk(),tl=logs[today]||{},wds=wd(),AS=allSubjects(),tot=AS.length;
+  const todayDone=AS.filter(s=>tl[s.id]).length,todayPct=tot?Math.round(todayDone/tot*100):0;
+  const weekDone=wds.reduce((a,d)=>a+Object.values(logs[d]||{}).filter(Boolean).length,0);
+  const weekPct=(tot*7)?Math.round(weekDone/(tot*7)*100):0;
+  const totalSylChapters=syllabus.reduce((a,s)=>a+s.chapters.length,0);
+  const doneSylChapters=syllabus.reduce((a,s)=>a+s.chapters.filter(c=>sylDone[c.id]).length,0);
+  const sylPct=totalSylChapters?Math.round(doneSylChapters/totalSylChapters*100):0;
+
+  let h=``;
+
+  // ── Summary Cards ──
+  h+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;">
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:12px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:var(--teal);font-family:'JetBrains Mono',monospace">${todayPct}%</div>
+      <div style="font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:3px">Today</div>
+    </div>
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:12px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:var(--indigo);font-family:'JetBrains Mono',monospace">${weekPct}%</div>
+      <div style="font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:3px">This Week</div>
+    </div>
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:12px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:var(--gold);font-family:'JetBrains Mono',monospace">${streak()}🔥</div>
+      <div style="font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:3px">Streak</div>
+    </div>
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:12px;text-align:center">
+      <div style="font-size:22px;font-weight:800;color:var(--emerald);font-family:'JetBrains Mono',monospace">${sylPct}%</div>
+      <div style="font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:3px">Syllabus Done</div>
+    </div>
+  </div>`;
+
+  // ── Weekly Bar Graph ──
+  h+=`<div style="margin-bottom:22px">
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);padding:7px 0;margin-bottom:12px;border-bottom:1px solid var(--border)">📅 WEEKLY PROGRESS</div>
+    <div style="display:flex;align-items:flex-end;gap:5px;height:110px;margin-bottom:6px;">`;
   wds.forEach((date,di)=>{
     const cnt=Object.values(logs[date]||{}).filter(Boolean).length;
-    const p=tot?Math.round(cnt/tot*100):0;
-    const isT=date===today;
+    const p=tot?Math.round(cnt/tot*100):0,isT=date===today;
     const col=p===100?"#34d399":p>60?"#e8b84b":isT?"#6366f1":"#2dd4bf";
-    h+=`<div class="wbar-col">
-      <div class="wbar-pct" style="color:${col}">${p}%</div>
-      <div class="wbar-fill" style="height:${Math.max(p,2)}%;background:${col};opacity:${isT?1:0.7}"></div>
-      <div class="wbar-lbl" style="color:${isT?"var(--teal)":"var(--text3)"}">${DAYS[di]}</div>
+    h+=`<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
+      <div style="font-size:7px;color:${col};font-family:'JetBrains Mono',monospace;">${p}%</div>
+      <div style="width:100%;height:${Math.max(p,3)}%;background:${col};border-radius:4px 4px 0 0;opacity:${isT?1:0.65};min-height:3px;transition:height 0.5s;"></div>
+      <div style="font-size:8px;color:${isT?"var(--teal)":"var(--text3)"};font-family:'JetBrains Mono',monospace;">${DAYS[di]}</div>
     </div>`;
   });
   h+=`</div></div>`;
 
-  // Subject-wise bar graph
-  h+=`<div class="stats-section"><div class="stats-title"><span>📚</span> SUBJECT-WISE TODAY</div><div class="bar-chart">`;
+  // ── Today Block-wise Bars ──
+  h+=`<div style="margin-bottom:22px">
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);padding:7px 0;margin-bottom:10px;border-bottom:1px solid var(--border)">📋 TODAY — BLOCK PROGRESS</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">`;
   allBlocks().forEach(block=>{
-    block.subjects.forEach(sub=>{
-      const done=tl[sub.id]?1:0;
-      h+=`<div class="bar-row">
-        <div class="bar-label">${sub.icon} ${sub.name}</div>
-        <div class="bar-track">
-          <div class="bar-fill" style="width:${done?100:0}%;background:${block.color}">
-            ${done?'<span class="bar-pct">✓</span>':""}
-          </div>
+    if(!block.subjects.length)return;
+    const bd=block.subjects.filter(s=>tl[s.id]).length,bt=block.subjects.length;
+    const bp=bt?Math.round(bd/bt*100):0;
+    h+=`<div style="display:flex;align-items:center;gap:8px;">
+      <div style="font-size:9px;color:var(--text2);width:95px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'JetBrains Mono',monospace;">${block.label}</div>
+      <div style="flex:1;height:18px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
+        <div style="height:100%;width:${bp}%;background:${block.color};border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:5px;transition:width 0.5s;">
+          ${bp>15?`<span style="font-size:8px;font-weight:800;color:#000;">${bp}%</span>`:""}
         </div>
-        <div class="bar-val" style="color:${done?"var(--emerald)":"var(--text3)"}">${done?"✓":"—"}</div>
-      </div>`;
-    });
+      </div>
+      <div style="font-size:9px;color:${block.color};width:30px;text-align:right;font-family:'JetBrains Mono',monospace;">${bd}/${bt}</div>
+    </div>`;
   });
   h+=`</div></div>`;
 
-  // Block-wise completion bars
-  h+=`<div class="stats-section"><div class="stats-title"><span>🗂️</span> BLOCK-WISE TODAY</div><div class="bar-chart">`;
-  allBlocks().forEach(block=>{
-    if(!block.subjects.length)return;
-    const bd=block.subjects.filter(s=>tl[s.id]).length;
-    const bt=block.subjects.length;
-    const bp=bt?Math.round(bd/bt*100):0;
-    h+=`<div class="bar-row">
-      <div class="bar-label">${block.label}</div>
-      <div class="bar-track">
-        <div class="bar-fill" style="width:${bp}%;background:${block.color}">
-          ${bp>15?`<span class="bar-pct">${bp}%</span>`:""}
+  // ── Syllabus Subject-wise Bars ──
+  h+=`<div style="margin-bottom:22px">
+    <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);padding:7px 0;margin-bottom:10px;border-bottom:1px solid var(--border)">📚 SYLLABUS PROGRESS</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">`;
+  syllabus.forEach(sub=>{
+    const total=sub.chapters.length;if(!total)return;
+    const done=sub.chapters.filter(c=>sylDone[c.id]).length;
+    const pct=Math.round(done/total*100);
+    h+=`<div style="display:flex;align-items:center;gap:8px;">
+      <div style="font-size:9px;color:var(--text2);width:95px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'JetBrains Mono',monospace;">${sub.icon} ${sub.name}</div>
+      <div style="flex:1;height:18px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
+        <div style="height:100%;width:${pct}%;background:${sub.color};border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:5px;transition:width 0.5s;">
+          ${pct>15?`<span style="font-size:8px;font-weight:800;color:#000;">${pct}%</span>`:""}
         </div>
       </div>
-      <div class="bar-val" style="color:${block.color}">${bd}/${bt}</div>
+      <div style="font-size:9px;color:${sub.color};width:30px;text-align:right;font-family:'JetBrains Mono',monospace;">${done}/${total}</div>
     </div>`;
   });
   h+=`</div></div>`;
@@ -655,12 +912,13 @@ function renderStats(){
 let curTab="today";
 function switchTab(tab){
   curTab=tab;
-  const tabs=["today","week","notes","stats"];
+  const tabs=["today","week","syllabus","stats","notes"];
   document.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",tabs[i]===tab));
   document.querySelectorAll(".bnav-btn").forEach((b,i)=>b.classList.toggle("active",tabs[i]===tab));
   tabs.forEach(t=>document.getElementById("tab-"+t).style.display=t===tab?"block":"none");
   if(tab==="week")renderWeek();
   if(tab==="notes")renderNotes();
+  if(tab==="syllabus")renderSyllabus();
   if(tab==="stats")renderStats();
 }
 
@@ -700,13 +958,8 @@ window.addEventListener("beforeinstallprompt",e=>{
 
 // ── DAILY RESET ───────────────────────────────────────
 function checkDailyReset(){
-  const lastDate=localStorage.getItem("sos_last_date");
-  const today=tk();
-  if(lastDate && lastDate!==today){
-    // New day — today's tasks reset (old days kept for week view)
-    logs[today]={};
-    save();
-  }
+  const lastDate=localStorage.getItem("sos_last_date"),today=tk();
+  if(lastDate&&lastDate!==today){logs[today]={};save();}
   localStorage.setItem("sos_last_date",today);
 }
 checkDailyReset();
@@ -715,5 +968,6 @@ checkDailyReset();
 updateHeader();renderToday();
 setInterval(()=>{checkDailyReset();updateHeader();if(curTab==="today")renderToday();},60000);
 </script>
+
 </body>
 </html>
